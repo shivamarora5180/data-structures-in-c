@@ -1,0 +1,61 @@
+#include<iostream.h>
+#include<conio.h>
+#define MAX 5
+using namespace std
+
+class Stack
+{
+    public:
+        Stack(){
+            top=0;
+    }
+
+    private:
+        int item,i;
+        int stack[MAX];
+        int top;
+    void push()
+    {
+        if(top==MAX)
+            cout<<"STACK OVERFLOW";
+        else{
+            cout<<"Enter the value to be pushed";
+            cin>>item;
+            stack[top++]=item;
+        }
+    }
+    void pop()
+    {
+        if(top==0)
+            cout<<"Stack underflow";
+        else{
+            top--;
+            cout<<"\nPosition"<<top<<"Popped value"<<stack[top];
+        }
+    }
+    void display()
+    {
+        for(i=(top-1);i>=0;i--)
+            cout<<"position:"<<i<<"Value"<<stack[i];
+    }
+};
+int main()
+{
+    int choice;
+    Stack obj;
+    do{
+            cout<<"1:push 2:pop 3:display";
+            cout<<"Enter the choice";
+            cin>>choice;
+            switch(choice)
+            {
+                case 1: obj.push();
+                    break;
+                case 2: obj.pop();
+                    bteak;
+                case 3: obj,display();
+                        break;
+            }
+        }while(choice<4);
+        return 0;
+}
