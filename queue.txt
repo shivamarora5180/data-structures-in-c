@@ -1,0 +1,71 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node {
+    int data;
+    struct data *next;
+    };
+    struct node *front=NULL;
+    struct node *rear=NULL;
+void display();
+void enqueue(int);
+void dequeue();
+int main()
+{
+    int n,ch;
+    do{
+        printf("1:PUSH 2:POP 3:DISPLAY\n");
+        printf("ENter the choice\n");
+        scanf("%d",&ch);
+        switch(ch){
+            case 1:printf("Enter the number \n");
+                    scanf("%d",&n);
+                    enqueue(n);
+                    break;
+           case 2:dequeue();
+                        break;
+            case 3: display();
+                            break;
+        }
+    }while(ch!=0);
+}
+void enqueue(int item)
+{
+    struct node *nptr = malloc(sizeof(struct node));
+    nptr->data=item;
+    nptr->next=NULL;
+    if(rear==NULL)
+    {
+        front = nptr;
+        rear = nptr;
+    }
+    else
+    {
+        rear->next=nptr;
+        rear=rear->next;
+    }
+}
+void dequeue()
+{
+    if(front==NULL)
+    {
+        printf("queue is empty");
+    }
+    else
+    {
+        struct node *temp;
+        temp=front;
+        front=front->next;
+        printf("deleted\n",temp->data);
+        free(temp);
+    }
+}
+void display()
+{
+    struct node *temp;
+    temp=front;
+    while(temp!=NULL)
+    {
+        printf("%d\t",temp->data);
+        temp=temp->next;
+    }
+}
