@@ -25,7 +25,7 @@ printf("\nEnter the postfix expression:\n");
 flushall();
 gets(postfix);
 top=-1;
-for(i=0; <strlen(postfix); i++)
+for(i=0;i<strlen(postfix); i++)
 {
 symbol = postfix[i];
 if(isdigit(symbol))
