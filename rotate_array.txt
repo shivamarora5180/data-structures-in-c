@@ -1,0 +1,60 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+int i,a[100],b[100],n;
+
+cout<<"Enter the no. of elements";
+
+cin>>n;
+
+cout<<"Enter the rotation Factor"<<endl;
+
+int x;
+
+cin>>x;
+
+cout<<"Enter the element of the array"<<endl;
+
+for(int i =0;i<n;i++)
+
+{
+
+cin>>a[i];
+
+}
+
+for(i =n-1;i>=0;i--)
+
+{
+
+if(i+x>=n)
+
+{
+
+b[i+x-n]=a[i];
+
+}
+
+else
+
+b[i+x]=a[i];
+
+}
+//if the value is greater then n , junk value is added
+
+cout<<"The rotated array is "<<endl;
+
+for(int i=0;i<n;i++)
+
+{
+
+cout<<b[i]<<'\t';
+
+}
+
+return 0;
+
+}
