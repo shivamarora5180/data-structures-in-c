@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+
+    int v, five, two ,one,total;
+    cin>>v;
+    five=(v-4)/5;
+    one=((v-(5*five))%2==0)?2:1;
+    two=(v-(5*five)-(one))/2;
+    total=five+two+one;
+    cout<<total<<" "<<five<<" "<<two<<" "<<one;
+    return 0;
+}
