@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int T;
+    cin>>T;
+    while(T>0)
+    {
+        long long int N;
+        cin>>N;
+        long long int S[N];
+        for(long long int i=0;i<N;i++)
+        {
+            cin>>S[i];
+        }
+        long long int count=0;
+        long long int total=0;
+        for(long long int i=0;i<N-1;i++)
+        {
+            count=abs(S[i]-S[i+1])-1;
+            total=total+count;
+        }
+        cout<<total<<endl;
+        T--;
+    }
+    return 0;
+}
