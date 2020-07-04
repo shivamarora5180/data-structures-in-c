@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long int digitsum(long long int num){
+    long long int m,sum=0;
+    while(num>0)
+    {
+    m=num%10;
+    sum=sum+m;
+    num=num/10;
+    }
+    return sum;
+}
+int main()
+{
+    long long int T;
+    cin>>T;
+    while(T>0)
+    {
+        long long int N;
+        long long int i,j;
+        cin>>N;
+        long long int A,B;
+        long long int c=0,m=0;
+        for(long long int k=0;k<N;k++){
+            cin>>A>>B;
+            i=digitsum(A);
+            j=digitsum(B);
+            if(i>j){
+                c++;
+            }else if(i<j){
+                m++;
+            }else{
+                c++;
+                m++;
+            }
+        }
+        if(c>m){
+            cout<<"0"<<" "<<c<<endl;
+        }else if(c<m){
+            cout<<"1"<<" "<<m<<endl;
+        }else{
+            cout<<"2"<<" "<<m<<endl;
+        }
+        T--;
+    }
+}
