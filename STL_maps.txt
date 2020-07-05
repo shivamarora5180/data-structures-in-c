@@ -1,0 +1,42 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int i, n, mark, q;
+    string name;
+    map<string,int> m;
+    map<string,int>::iterator itr;
+    cin>>n;
+    for(i=0; i<n; i++){
+        cin>>q;
+        switch(q){
+            case 1:
+            cin>>name>>mark;
+            if(m.find(name)==m.end()){
+                m.insert(make_pair(name,mark));
+            }else{
+                itr=m.find(name);
+                itr->second += mark;
+            }break;
+
+            case 2:
+            cin>>name;
+            m.erase(name);
+            break;
+
+            case 3:
+            cin>>name;
+            itr = m.find(name);
+            cout<< (itr!=m.end()? itr->second : 0) <<endl;
+        }
+    }
+    return 0;
+}
