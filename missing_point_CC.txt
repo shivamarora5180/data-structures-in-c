@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int T;
+    cin>>T;
+    while(T--)
+    {
+       long long int N;
+       cin>>N;
+       vector<long long int> A,B;
+       for(long long int i=0;i<4*N-1;i++){
+        long long int x,y;
+        cin>>x>>y;
+        A.push_back(x);
+        B.push_back(y);
+       }
+       long long int a,b;
+       a=A[0];
+       b=B[0];
+       for(long long int i=1;i<4*N-1;i++){
+        a=a^A[i];
+        b=b^B[i];
+       }
+       cout<<a<<" "<<b;
+    }
+}
