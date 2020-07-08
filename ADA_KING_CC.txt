@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define M 8
+int main(){
+    ll t;
+    cin>>t;
+    while(t--){
+        ll n;
+        cin>>n;
+        ll k=n;
+        ll count=0;
+        string str[8]={"XXXXXXXX","XXXXXXXX","XXXXXXXX","XXXXXXXX","XXXXXXXX","XXXXXXXX","XXXXXXXX","XXXXXXXX"};
+        for(int i=0;i<M;i++)
+        {
+            for(int j=0;j<M;j++)
+            {
+                if(count<k){
+                    str[i][j]='.';
+                    count++;
+                }
+            }
+        }
+        str[0][0]='O';
+        for(int i=0;i<M;i++)
+        {
+            cout<<str[i]<<"\n";
+        }
+    }
+}
