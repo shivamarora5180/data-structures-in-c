@@ -1,9 +1,9 @@
 n=int(input())
-b=list(input())
-g=list(input())
-for i in b:
-  if i in g:
-    g.remove(i) 
+boy=list(input())
+girl=list(input())
+for i in boy:
+  if i in girl:
+    girl.remove(i) 
   else:
     break
-print(len(g))      
+print(len(girl))      
